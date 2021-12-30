@@ -1,0 +1,69 @@
+package com.lcomputerstudy.example.controller;
+
+import java.util.List;
+
+import org.apache.ibatis.ognl.ASTThisVarRef;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@CrossOrigin(origins = "*", maxAge = 3600)
+@RestController
+@RequestMapping("/api/test")
+public class TestController {
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	@Autowired
+	private BoardService boardService;
+	
+	
+	
+	@GetMapping("/all")
+	public String allAccess() {
+		return "public Content.";
+	}
+	
+	@GetMapping("/user")
+	@PreAuthorize("hasRole('USER')")
+	public ResponseEntity<?> userAccess() {
+		List<Board> boardList = boardService.selectBoardList();
+		return ResponseEntity.ok(boardList);
+	}
+	
+	@GetMapping("/admin")
+	@PreAuthorize("hasRole('Admin')")
+	public String adminAccess() {
+		return "Admin Content.";
+	}
+	
+	@GetMapping("/boardDetail")
+	@PreAuthorize("hasRole('USER')")
+	public ResponseEntity<?> boardDetail(@RequestParam int bId) {
+		
+		logger.info("///"+bId);
+		
+		Board board = boardService.selectBoardDetail(bId);
+		return ResponseEntity.ok(board);
+	}
+	
+	@DeleteMapping("/boardDelete/{bId}")
+	@PreAuthorize("hasRole('USER')")
+	public ResponseEntity<?> boardDelete(@PathVariable(value = "bId") int bId) {
+		
+		logger.info("delete"+bId);
+		boardService.deleteBoard(bId);
+		
+		return ResponseEntity.ok(bId);
+	}
+	
+
+}

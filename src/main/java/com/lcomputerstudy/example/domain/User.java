@@ -93,19 +93,19 @@ public class User implements UserDetails {
 
 
 
-	public void setIsAccountNonLocked(Boolean isAccountNonLocked) {
+	public void setAccountNonLocked(Boolean isAccountNonLocked) {
 		this.isAccountNonLocked = isAccountNonLocked;
 	}
 
 
 
-	public void setIsCredentialsNonExpired(Boolean isCredentialsNonExpired) {
+	public void setCredentialsNonExpired(Boolean isCredentialsNonExpired) {
 		this.isCredentialsNonExpired = isCredentialsNonExpired;
 	}
 
 
 
-	public void setIsEnabled(Boolean isEnabled) {
+	public void setEnabled(Boolean isEnabled) {
 		this.isEnabled = isEnabled;
 	}
 	
