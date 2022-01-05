@@ -1,0 +1,50 @@
+12:02:22.491 INFO  --- [main] c.l.example.RestLoginApplication : Starting RestLoginApplication using Java 15.0.1 on DESKTOP-PQ5J03J with PID 12388 (C:\Users\l4-morning\Documents\work10\restLogin\bin\main started by l4-morning in C:\Users\l4-morning\Documents\work10\restLogin) 
+12:02:22.493 DEBUG --- [main] c.l.example.RestLoginApplication : Running with Spring Boot v2.6.2, Spring v5.3.14 
+12:02:22.493 INFO  --- [main] c.l.example.RestLoginApplication : The following profiles are active: local 
+12:02:22.520 WARN  --- [main] o.s.b.c.c.ConfigDataEnvironment : Property 'spring.profiles' imported from location 'class path resource [application.yml]' is invalid and should be replaced with 'spring.config.activate.on-profile' [origin: class path resource [application.yml] - 10:5] 
+12:02:23.513 ERROR --- [main] o.s.b.w.e.tomcat.TomcatStarter : Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'sessionRepositoryFilterRegistration' defined in class path resource [org/springframework/boot/autoconfigure/session/SessionRepositoryFilterConfiguration.class]: Unsatisfied dependency expressed through method 'sessionRepositoryFilterRegistration' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.session.JdbcSessionConfiguration$SpringBootJdbcHttpSessionConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class 
+12:02:23.537 WARN  --- [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat 
+12:02:23.556 ERROR --- [main] o.s.b.d.LoggingFailureAnalysisReporter : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles local are currently active).
+ 
+12:02:34.021 INFO  --- [main] c.l.example.RestLoginApplication : Starting RestLoginApplication using Java 15.0.1 on DESKTOP-PQ5J03J with PID 5580 (C:\Users\l4-morning\Documents\work10\restLogin\bin\main started by l4-morning in C:\Users\l4-morning\Documents\work10\restLogin) 
+12:02:34.023 DEBUG --- [main] c.l.example.RestLoginApplication : Running with Spring Boot v2.6.2, Spring v5.3.14 
+12:02:34.023 INFO  --- [main] c.l.example.RestLoginApplication : The following profiles are active: local 
+12:02:34.050 WARN  --- [main] o.s.b.c.c.ConfigDataEnvironment : Property 'spring.profiles' imported from location 'class path resource [application.yml]' is invalid and should be replaced with 'spring.config.activate.on-profile' [origin: class path resource [application.yml] - 10:5] 
+12:02:34.904 ERROR --- [main] o.s.b.w.e.tomcat.TomcatStarter : Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'sessionRepositoryFilterRegistration' defined in class path resource [org/springframework/boot/autoconfigure/session/SessionRepositoryFilterConfiguration.class]: Unsatisfied dependency expressed through method 'sessionRepositoryFilterRegistration' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.session.JdbcSessionConfiguration$SpringBootJdbcHttpSessionConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class 
+12:02:34.926 WARN  --- [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat 
+12:02:34.944 ERROR --- [main] o.s.b.d.LoggingFailureAnalysisReporter : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles local are currently active).
+ 

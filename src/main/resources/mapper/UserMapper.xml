@@ -16,7 +16,7 @@
 								u_phone		as phone,
 								u_isAccountNonExpired	as isAccountNonExpired,
 								u_isAccountNonLocked 	as isAccountNonLocked,
-								u_isCredentialNonExpired	as isCredentialNonExpired,
+								u_isCredentialNonExpired	as isCredentialsNonExpired,
 								u_isEnabled				as isEnabled
 		FROM			userlist
 		WHERE			1=1
@@ -24,9 +24,9 @@
 	</select>
 	
 	<select id="readUser_refresh" parameterType="String" resultType="UserInfo">
-		SELECT				u_id
-									u_name
-									u_phone
+		SELECT				u_id as username,
+									u_name as name,
+									u_phone as phone
 		FROM				userlist
 		WHERE				1=1
 		AND						u_id = #{username}

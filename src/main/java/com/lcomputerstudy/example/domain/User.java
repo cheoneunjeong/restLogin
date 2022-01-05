@@ -88,7 +88,7 @@ public class User implements UserDetails {
 	}
 	
 	public void setAccountNonExpired(boolean isAccountNonExpired) {
-		this.isAccountNonExpired = isCredentialsNonExpired;
+		this.isAccountNonExpired = isAccountNonExpired;
 	}
 
 

@@ -14,6 +14,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -57,6 +58,13 @@ public class AdminController {
 //			return ResponseEntity.ok(new JwtResponse1(
 //																			userList,
 //																			userList_auth));
+		}
+		
+		@GetMapping("/adminPage")
+		public ResponseEntity<?> adminpage(HttpServletRequest request) {
+			List<UserInfo> list = userService.read_user_list();
+			
+			return new ResponseEntity<>(list, HttpStatus.OK);
 		}
 
 }
